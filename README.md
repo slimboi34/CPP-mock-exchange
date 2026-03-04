@@ -4,7 +4,7 @@ This project is a high-performance, single-threaded Limit Order Book (LOB) and M
 
 Included is a native **Dear ImGui** application that visually simulates order flow through the engine in real time.
 
-## 🚀 Key Features and Architecture
+##  Key Features and Architecture
 
 *   **Zero Dynamic Allocations in the Critical Path**: The engine uses a custom, statically pre-allocated `MemoryPool` that issues `Order` objects in $O(1)$ time, entirely avoiding slow system calls like `new` or `malloc` when matching orders.
 *   **$O(1)$ Price Level Operations**: The order book utilizes intrusive doubly-linked lists. Order objects hold their own `prev` and `next` pointers, meaning deletions/fills at the head of a price level (Price-Time Priority) happen in constant time.
@@ -13,13 +13,13 @@ Included is a native **Dear ImGui** application that visually simulates order fl
 *   **Google Test Suite**: Unit tests verifying edge cases like partial-fills and overlapping limits.
 *   **Native GUI**: A high-framerate renderer built with `Dear ImGui` and `GLFW` to visualize the engine's internal state.
 
-## 🛠 Prerequisites
+## Prerequisites
 
 *   A C++20 capable compiler (`clang` or `gcc`)
 *   `CMake` (Version 3.14+)
 *   `GLFW` (For the GUI. On macOS, install via `brew install glfw`)
 
-## 💻 Building and Running
+## Building and Running
 
 ### 1. Build the GUI App
 To run the live mock exchange visualizer:
@@ -47,7 +47,7 @@ cmake --build . -j$(sysctl -n hw.ncpu)
 ./build/tests/test_matching
 ```
 
-## 🧠 Memory Architecture Deep Dive
+## Memory Architecture Deep Dive
 
 The standard way to build a limit order book uses standard libraries: `std::map<Price, std::list<Order>>`. 
 However, standard libraries inherently call `new` when inserting elements, destroying latency.
