@@ -1,0 +1,31 @@
+# CMake
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+build/
+build-release/
+
+# macOS
+.DS_Store
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Executables and objects
+*.o
+*.a
+*.so
+*.dylib
+mock_exchange_gui
+test_matching
+benchmark_matching
